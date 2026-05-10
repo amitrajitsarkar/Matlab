@@ -1,6 +1,6 @@
 // 1a
 
-sys1 = tf([10] ,conv(conv([1 0] ,[1 1]), [0.02 1]));
+ = tf([10] ,conv(conv([1 0] ,[1 1]), [0.02 1]));sys1
 bode(sys1);
 margin(sys1); //  gives the stable points
 

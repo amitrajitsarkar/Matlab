@@ -27,3 +27,111 @@ s= tf(n ,den);
 
 pzmap(s)
 
+
+
+% 32   k / ( s+2)(s+ 4)(s^2 +6s +25)
+n=[1];
+d = conv(conv([1 ,2],[1,4]),[1 6 25]);
+s = tf(n,d);
+rlocus(s)
+
+
+n = [1 1];          % s + 1
+d = conv([1 0],[1 -1]);   % s(s-1)
+
+sys = tf(n,d);
+
+rlocus(sys)
+
+
+
+clc
+clear
+close all
+
+n = [1];    % K
+
+d = conv([1 1], [1 2]);
+d = conv(d, [1 5]);
+
+sys = tf(n,d);
+
+rlocus(sys)
+grid on
+
+
+% 30 ii
+clc
+clear
+close all
+
+n = [1 15];      % (s + 15)
+
+d = conv([1 0 0],[1 10]);   % s^2(s+10)
+
+sys = tf(n,d);
+
+rlocus(sys)
+grid on
+
+p = [0 0 -10];clc
+clear
+close all
+
+n = [1];          % K
+
+d = conv([1 0],[1 6 10]);   % s(s^2 + 6s + 10)
+
+sys = tf(n,d);
+
+rlocus(sys)
+grid on
+z = [-15];
+
+centroid = (sum(p)-sum(z))/(length(p)-length(z))
+
+
+% 64
+
+clc
+clear
+close all
+
+n = [1];          % K
+
+d = conv([1 0],[1 6 10]);   % s(s^2 + 6s + 10)
+
+sys = tf(n,d);
+
+rlocus(sys)
+grid on
+
+% 65
+clc
+clear
+close all
+
+n = [1];      % K
+
+d = conv([1 1],[1 2]);
+d = conv(d,[1 5]);
+
+sys = tf(n,d);
+
+rlocus(sys)
+grid on
+
+% 66
+clc
+clear
+close all
+
+n = [1];    % K
+
+d = conv([1 0],[1 1]);      % s(s+1)
+d = conv(d,[1 2 2]);        % (s^2 + 2s + 2)
+
+sys = tf(n,d);
+
+rlocus(sys)
+grid on
